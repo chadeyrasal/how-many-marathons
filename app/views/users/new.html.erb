@@ -1,1 +1,24 @@
-<br>Sign up form
+<strong>Sign up here!</strong>
+
+<div class="form-wrapper">
+    <%= form_tag(users_path) do %>
+
+        <div class="field">
+            <%= label_tag :first_name %>:<br>
+            <%= email_field_tag :email %><br><br>
+        </div>
+
+        <div class="field">
+            <%= label_tag(:email, "Email address: ") %><br>
+            <%= email_field_tag :email %><br><br>
+        </div>
+
+        <div class="field">
+            <%= label_tag :password %>:<br>
+            <%= password_field_tag :password %><br><br>
+        </div>
+
+        <%= submit_tag "Sign Up", class: "submit" %>
+
+    <% end %>
+</div>
