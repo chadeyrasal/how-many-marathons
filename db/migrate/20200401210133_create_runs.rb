@@ -3,6 +3,8 @@ class CreateRuns < ActiveRecord::Migration[6.0]
     create_table :runs do |t|
       t.datetime :date
       t.float :distance
+
+      t.timestamps
     end
   end
 end
