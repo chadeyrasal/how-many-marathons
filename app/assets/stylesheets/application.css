@@ -12,7 +12,7 @@
   font-weight: 100;
   margin: auto;
   max-width: 320px;
-  min-height: 700px;
+  min-height: 100%;
   padding: 20px;
   text-align: center;
 }
@@ -37,14 +37,18 @@
   max-width: 100%;
 }
 
-.field {
+.form-field {
   text-align: left;
 }
 
-#email,
-#password {
+#user_first_name,
+#user_email,
+#user_password {
+  font-family: brandon-grotesque, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
   margin-top: 8px;
-  padding-top: 5px;
   width: 100%;
 }
 
