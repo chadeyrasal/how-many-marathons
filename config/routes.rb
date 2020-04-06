@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   get "/runs", to: "runs#index"
 
+  get "/runs/new", to: "runs#new"
+
+  post "/runs", to: "runs#create"
+
 end
