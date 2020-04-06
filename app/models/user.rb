@@ -12,8 +12,8 @@ class User < ApplicationRecord
         total
     end
 
-    def last_five
-        self.runs.order(created_at: :desc).limit(5)
+    def last_three
+        self.runs.order(created_at: :desc).limit(3)
     end
 
 end
