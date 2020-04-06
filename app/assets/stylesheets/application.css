@@ -43,7 +43,9 @@
 
 #user_first_name,
 #user_email,
-#user_password {
+#user_password,
+#email,
+#password {
   font-family: brandon-grotesque, sans-serif;
   font-size: 14px;
   font-style: normal;
