@@ -16,6 +16,9 @@
         <%= image_tag "during-desk.png", class: "during" %><br><br>
 
         <%= yield %>
+        <% if logged_in? %>
+          <p class="logout">You are logged in as <%= current_user.first_name %> | <%= link_to "Log Out", logout_path %></p>
+        <% end %>
       </div>
     </div>
   </body>
