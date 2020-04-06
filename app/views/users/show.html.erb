@@ -1,8 +1,20 @@
 <p>Hello <%= @user.first_name %></p>
-<br/>
+
+<p class="titles">During the containment you ran: </p>
+
+<div class="distance"><%= @user.total_distance / 42.195 %></div> marathons
+
+<p class="titles">Your last runs: </p>
 <% if @user.runs.length != 0 %>
-    <p>During the containment you ran: </p>
+    <% @user.runs.each do |run| %>
+        run.date | run.distance
+    <% end %>
+<% else%>
+    You haven't recorded any run yet
 <% end %>
-<button class="submit">Add a new run</button>
-<p>You are logged in as <%= @user.first_name %></p>
-<%= link_to "Log Out", logout_path %>
+
+<%= link_to '<button class="submit">Add a new run</button>'.html_safe, runs_new_path %>
+
+<%= link_to '<button class="view-all">See all your runs</button>'.html_safe, runs_path %>
+
+<p class="logout">You are logged in as <%= @user.first_name %> | <%= link_to "Log Out", logout_path %></p>
