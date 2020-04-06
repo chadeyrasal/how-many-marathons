@@ -2,19 +2,19 @@
 
 <p class="titles">During the containment you ran: </p>
 
-<div class="distance"><%= @user.total_distance / 42.195 %></div> marathons
+<div class="distance"><%= (@user.total_distance / 42.195).round(4) %></div> marathons
 
-<p class="titles">Your last runs: </p>
+<br/><br/>
+
+<p class="titles">Your latest runs: </p>
 <% if @user.runs.length != 0 %>
-    <% @user.runs.each do |run| %>
-        run.date | run.distance
+    <% @user.last_three.each do |run| %>
+        <p><%= run.date.strftime("%B %e %Y") %> | <%= (run.distance).round(2) %> km</p>
     <% end %>
 <% else%>
-    You haven't recorded any run yet
+    You haven't recorded runs yet
 <% end %>
 
 <%= link_to '<button class="submit">Add a new run</button>'.html_safe, runs_new_path %>
 
 <%= link_to '<button class="view-all">See all your runs</button>'.html_safe, runs_path %>
-
-<p class="logout">You are logged in as <%= @user.first_name %> | <%= link_to "Log Out", logout_path %></p>
