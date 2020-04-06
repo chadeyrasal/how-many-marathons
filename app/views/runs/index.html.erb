@@ -1,0 +1,15 @@
+<p><strong>All your runs</strong></p>
+
+<% if @runs.size != 0 %>
+    <% @runs.reverse.each do |run| %>
+        <p><%= run.date.strftime("%B %e %Y") %> | <%= (run.distance).round(2) %> km</p>
+    <% end %>
+<% else %>
+    You haven't recorded runs yet
+<% end %>
+
+<p><%= link_to '<button class="submit">Add a new run</button>'.html_safe, runs_new_path %></p>
+
+<br/>
+
+<p><%= link_to "Back to my page", user_path(current_user) %></p>

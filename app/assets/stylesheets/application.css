@@ -45,7 +45,9 @@
 #user_email,
 #user_password,
 #email,
-#password {
+#password,
+#run_date,
+#run_distance {
   font-family: brandon-grotesque, sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -85,7 +87,7 @@
   color: darkslategray;
   font-size: 18px;
   font-weight: 500;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .distance {
